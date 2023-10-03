@@ -3,6 +3,8 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import Card from "../../card/Card";
 import { FiX } from 'react-icons/fi';
+import Sound from '../../sound/Sound'; // Import the HOC
+import useSound from 'use-sound';
 
 import "./productForm.scss";
 
@@ -17,8 +19,10 @@ const ProductForm = ({
   saveProduct,
   handleClearImage,
 }) => {
+  
+  
   return (
-    <div className="add-product">
+    <div className="add-product"> 
       <Card cardClass={"card"}>
         <form onSubmit={saveProduct}>
           <Card cardClass={"group"}>
@@ -33,8 +37,6 @@ const ProductForm = ({
               accept=".jpg, .jpeg, .png"
               onChange={(e) => handleImageChange(e)}
             />
-            
-
             {imagePreview ? (
                 <div className="image-container">
                     <img src={imagePreview} alt="Product" />
@@ -94,9 +96,9 @@ const ProductForm = ({
           />
 
           <div className="--my">
-            <button type="submit" className="--mybtnnew" >
-              Save Product
-            </button>
+          <button type="submit" className="--mybtnnew" >
+            Save Product
+          </button>
           </div>
         </form>
       </Card>

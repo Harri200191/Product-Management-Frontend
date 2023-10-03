@@ -20,6 +20,8 @@ import EditProduct from "./pages/editProduct/EditProduct";
 import Profile from "./pages/profile/Profile";
 import EditProfile from "./pages/profile/EditProfile";
 import Contact from "./pages/contact/Contact";
+import Invoice from "./pages/Invoice/Invoice"; 
+
 
 axios.defaults.withCredentials = true;
 
@@ -98,6 +100,17 @@ function App() {
             <Sidebar>
               <Layout>
                 <Contact />
+              </Layout>
+            </Sidebar>
+          }
+        />
+
+        <Route
+          path="/invoice-maker"
+          element={
+            <Sidebar>
+              <Layout>
+                <Invoice />
               </Layout>
             </Sidebar>
           }
